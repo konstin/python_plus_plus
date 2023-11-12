@@ -28,7 +28,6 @@ tracing = "0.1.40"
 widestring = "1.0.2"
 
 [features]
-default = ["vendored"]
 vendored = ["git2/vendored-openssl", "git2/vendored-libgit2"]
 
 # The profile that 'cargo dist' will build with

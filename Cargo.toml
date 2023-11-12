@@ -1,6 +1,6 @@
 [package]
 name = "python_plus_plus"
-version = "0.0.4"
+version = "0.0.5"
 edition = "2021"
 authors = ["konstin <konstin@mailbox.org>"]
 repository = "https://github.com/konstin/python_plus_plus"

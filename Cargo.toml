@@ -1,6 +1,6 @@
 [package]
 name = "python_plus_plus"
-version = "0.0.3"
+version = "0.0.4"
 edition = "2021"
 authors = ["konstin <konstin@mailbox.org>"]
 repository = "https://github.com/konstin/python_plus_plus"
@@ -38,6 +38,7 @@ lto = "thin"
 
 # Config for 'cargo dist'
 [workspace.metadata.dist]
+features = ["vendored"]
 # The preferred cargo-dist version to use in CI (Cargo.toml SemVer syntax)
 cargo-dist-version = "0.4.3"
 # The installers to generate for each app

@@ -1,15 +1,13 @@
 use fs_err as fs;
+use libc::wchar_t;
 use libloading::Library;
 use monotrail_utils::parse_cpython_args::{determine_python_version, naive_python_arg_parser};
 use monotrail_utils::standalone_python::provision_python;
-use nix::libc::wchar_t;
 use ruff_python_formatter::{format_module_source, FormatModuleError, PyFormatOptions};
 use std::error::Error;
 use std::ffi::{c_int, c_void};
 use std::mem::MaybeUninit;
 use std::path::{Path, PathBuf};
-#[cfg(windows)]
-use std::process::Command;
 use std::{env, io};
 use tempfile::NamedTempFile;
 use thiserror::Error;
@@ -20,9 +18,6 @@ use widestring::WideCString;
 enum PythonPlusPlusError {
     #[error(transparent)]
     Io(#[from] io::Error),
-    #[cfg(windows)]
-    #[error("Process didn't return an exit code")]
-    NoExitCode,
     #[error("Failed to load symbol from libpython (libpython should contain those symbols)")]
     LibLoading(#[from] libloading::Error),
     #[error("Path contains non-utf8 characters: {0}")]
@@ -165,8 +160,7 @@ fn inject_and_run_python(
         // Entirely untested, but it should at least compile
         #[cfg(windows)]
         unsafe {
-            let windows_lib = libloading::os::windows::Library::new(libpython3)
-                .context("Failed to load python3y.dll")?;
+            let windows_lib = libloading::os::windows::Library::new(libpython3)?;
             libloading::Library::from(windows_lib)
         }
     };

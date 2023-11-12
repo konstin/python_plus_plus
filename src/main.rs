@@ -1,7 +1,9 @@
 use fs_err as fs;
 use libc::wchar_t;
 use libloading::Library;
-use monotrail_utils::parse_cpython_args::{determine_python_version, naive_python_arg_parser};
+use monotrail_utils::parse_cpython_args::{
+    determine_python_version, naive_python_arg_parser, ParsePythonVersionError,
+};
 use monotrail_utils::standalone_python::provision_python;
 use ruff_python_formatter::{format_module_source, FormatModuleError, PyFormatOptions};
 use std::error::Error;
@@ -28,8 +30,8 @@ enum PythonPlusPlusError {
     NoSuchExecutable(String),
     #[error("Failed to provision python")]
     ProvisionPython(#[source] anyhow::Error),
-    #[error("Failed to determine python version")]
-    DeterminePythonVersion(#[source] anyhow::Error),
+    #[error(transparent)]
+    ParsePythonVersionError(#[from] ParsePythonVersionError),
     #[error("Failed to parse cpython arguments: {0}")]
     CpythonArgs(String),
     #[error("You need to pass a python script for this to work")]
@@ -242,8 +244,7 @@ fn run() -> Result<i32, PythonPlusPlusError> {
         .join(env!("CARGO_PKG_NAME"));
     let default_python_version = (3, 10);
     let (args_after, python_version) =
-        determine_python_version(&args[1..], None, default_python_version)
-            .map_err(PythonPlusPlusError::DeterminePythonVersion)?;
+        determine_python_version(&args[1..], None, default_python_version)?;
     let (python_binary, python_home) = provision_python(python_version, &cache_dir)
         .map_err(PythonPlusPlusError::ProvisionPython)?;
 

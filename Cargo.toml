@@ -1,0 +1,20 @@
+[package]
+name = "python_plus_plus"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.75"
+dirs = "5.0.1"
+fs-err = "2.9.0"
+libloading = "0.8.1"
+log = "0.4.20"
+monotrail-utils = { git = "https://github.com/konstin/poc-monotrail" }
+nix = { version = "0.27.1", features = ["process"] }
+ruff_python_formatter = { git = "https://github.com/konstin/ruff", branch = "pythonplusplus" }
+tempfile = "3.8.1"
+thiserror = "1.0.50"
+tracing = "0.1.40"
+widestring = "1.0.2"

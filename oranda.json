@@ -1,4 +1,7 @@
 {
+  "build": {
+    "path_prefix": "python_plus_plus"
+  },
   "styles": {
     "theme": "axodark"
   }

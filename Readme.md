@@ -2,7 +2,7 @@
 
 Did you ever want increment (`++`) and decrement (`--`) operators in python? Here they are
 
-```bash
+```console
 $ cat example.py
 i = 0
 while i < 3:

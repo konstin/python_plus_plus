@@ -2,6 +2,12 @@
 name = "python_plus_plus"
 version = "0.1.0"
 edition = "2021"
+authors = ["konstin <konstin@mailbox.org>"]
+repository = "https://github.com/konstin/python_plus_plus"
+
+[package.metadata.wix]
+upgrade-guid = "8D1866DC-8ECF-489A-A615-FA13CE08D620"
+path-guid = "EDE706B3-DB3B-48BC-B3EB-FEB3179360EF"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -18,3 +24,21 @@ tempfile = "3.8.1"
 thiserror = "1.0.50"
 tracing = "0.1.40"
 widestring = "1.0.2"
+
+# The profile that 'cargo dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
+
+# Config for 'cargo dist'
+[workspace.metadata.dist]
+# The preferred cargo-dist version to use in CI (Cargo.toml SemVer syntax)
+cargo-dist-version = "0.4.3"
+# The installers to generate for each app
+installers = ["shell", "powershell", "msi"]
+# Target platforms to build apps for (Rust target-triple syntax)
+targets = ["x86_64-unknown-linux-gnu", "aarch64-apple-darwin", "x86_64-apple-darwin", "x86_64-pc-windows-msvc"]
+# CI backends to support
+ci = ["github"]
+# Publish jobs to run in CI
+pr-run-mode = "plan"

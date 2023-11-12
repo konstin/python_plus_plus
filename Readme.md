@@ -1,6 +1,6 @@
 # python++
 
-Did you ever want increment (`++`) and decrement (`--`) operators in python? Here they are
+Did you ever want increment (`++`) and decrement (`--`) operators in python?
 
 ```
 $ cat example.py

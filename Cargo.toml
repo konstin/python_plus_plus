@@ -1,6 +1,6 @@
 [package]
 name = "python_plus_plus"
-version = "0.0.6"
+version = "0.0.7"
 edition = "2021"
 authors = ["konstin <konstin@mailbox.org>"]
 repository = "https://github.com/konstin/python_plus_plus"
@@ -13,18 +13,18 @@ path-guid = "EDE706B3-DB3B-48BC-B3EB-FEB3179360EF"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.75"
+anyhow = "1.0.81"
 dirs = "5.0.1"
-fs-err = "2.9.0"
-git2 = "0.18.1"
-libc = "0.2.150"
-libloading = "0.8.1"
-log = "0.4.20"
+fs-err = "2.11.0"
+git2 = "0.18.2"
+libc = "0.2.153"
+libloading = "0.8.3"
+log = "0.4.21"
 monotrail-utils = { git = "https://github.com/konstin/poc-monotrail" }
 nix = { version = "0.27.1", features = ["process"] }
-ruff_python_formatter = { git = "https://github.com/konstin/ruff", branch = "pythonplusplus" }
-tempfile = "3.8.1"
-thiserror = "1.0.50"
+ruff_python_formatter = { git = "https://github.com/konstin/ruff", rev = "7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3" }
+tempfile = "3.10.1"
+thiserror = "1.0.58"
 tracing = "0.1.40"
 widestring = "1.0.2"
 
@@ -38,14 +38,17 @@ lto = "thin"
 
 # Config for 'cargo dist'
 [workspace.metadata.dist]
+# Features to pass to cargo build
 features = ["vendored"]
 # The preferred cargo-dist version to use in CI (Cargo.toml SemVer syntax)
-cargo-dist-version = "0.4.3"
+cargo-dist-version = "0.12.0-prerelease.4"
 # The installers to generate for each app
 installers = ["shell", "powershell"]
 # Target platforms to build apps for (Rust target-triple syntax)
-targets = ["x86_64-unknown-linux-gnu", "aarch64-apple-darwin", "x86_64-apple-darwin", "x86_64-pc-windows-msvc"]
+targets = ["aarch64-apple-darwin", "x86_64-apple-darwin", "x86_64-unknown-linux-musl", "x86_64-pc-windows-msvc"]
 # CI backends to support
 ci = ["github"]
 # Publish jobs to run in CI
 pr-run-mode = "plan"
+# Whether to install an updater program
+install-updater = true

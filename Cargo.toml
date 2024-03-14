@@ -52,3 +52,5 @@ ci = ["github"]
 pr-run-mode = "plan"
 # Whether to install an updater program
 install-updater = true
+# Where to host releases
+hosting = ["axodotdev", "github"]

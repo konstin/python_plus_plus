@@ -714,7 +714,7 @@ dependencies = [
 
 [[package]]
 name = "python_plus_plus"
-version = "0.0.7"
+version = "0.0.8"
 dependencies = [
  "anyhow",
  "dirs",
@@ -838,7 +838,7 @@ dependencies = [
 [[package]]
 name = "ruff_cache"
 version = "0.0.0"
-source = "git+https://github.com/konstin/ruff?rev=7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3#7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3"
+source = "git+https://github.com/konstin/ruff?rev=671660a503a68bcf72287d757282a983217c4cc9#671660a503a68bcf72287d757282a983217c4cc9"
 dependencies = [
  "filetime",
  "glob",
@@ -851,7 +851,7 @@ dependencies = [
 [[package]]
 name = "ruff_formatter"
 version = "0.0.0"
-source = "git+https://github.com/konstin/ruff?rev=7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3#7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3"
+source = "git+https://github.com/konstin/ruff?rev=671660a503a68bcf72287d757282a983217c4cc9#671660a503a68bcf72287d757282a983217c4cc9"
 dependencies = [
  "drop_bomb",
  "ruff_cache",
@@ -867,7 +867,7 @@ dependencies = [
 [[package]]
 name = "ruff_macros"
 version = "0.0.0"
-source = "git+https://github.com/konstin/ruff?rev=7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3#7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3"
+source = "git+https://github.com/konstin/ruff?rev=671660a503a68bcf72287d757282a983217c4cc9#671660a503a68bcf72287d757282a983217c4cc9"
 dependencies = [
  "itertools",
  "proc-macro2",
@@ -879,7 +879,7 @@ dependencies = [
 [[package]]
 name = "ruff_python_ast"
 version = "0.0.0"
-source = "git+https://github.com/konstin/ruff?rev=7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3#7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3"
+source = "git+https://github.com/konstin/ruff?rev=671660a503a68bcf72287d757282a983217c4cc9#671660a503a68bcf72287d757282a983217c4cc9"
 dependencies = [
  "aho-corasick",
  "bitflags 2.5.0",
@@ -896,10 +896,9 @@ dependencies = [
 [[package]]
 name = "ruff_python_formatter"
 version = "0.0.0"
-source = "git+https://github.com/konstin/ruff?rev=7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3#7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3"
+source = "git+https://github.com/konstin/ruff?rev=671660a503a68bcf72287d757282a983217c4cc9#671660a503a68bcf72287d757282a983217c4cc9"
 dependencies = [
  "anyhow",
- "bitflags 2.5.0",
  "clap",
  "countme",
  "itertools",
@@ -927,7 +926,7 @@ dependencies = [
 [[package]]
 name = "ruff_python_index"
 version = "0.0.0"
-source = "git+https://github.com/konstin/ruff?rev=7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3#7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3"
+source = "git+https://github.com/konstin/ruff?rev=671660a503a68bcf72287d757282a983217c4cc9#671660a503a68bcf72287d757282a983217c4cc9"
 dependencies = [
  "ruff_python_ast",
  "ruff_python_parser",
@@ -939,7 +938,7 @@ dependencies = [
 [[package]]
 name = "ruff_python_parser"
 version = "0.0.0"
-source = "git+https://github.com/konstin/ruff?rev=7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3#7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3"
+source = "git+https://github.com/konstin/ruff?rev=671660a503a68bcf72287d757282a983217c4cc9#671660a503a68bcf72287d757282a983217c4cc9"
 dependencies = [
  "anyhow",
  "bitflags 2.5.0",
@@ -954,13 +953,14 @@ dependencies = [
  "static_assertions",
  "tiny-keccak",
  "unicode-ident",
+ "unicode-normalization",
  "unicode_names2",
 ]
 
 [[package]]
 name = "ruff_python_trivia"
 version = "0.0.0"
-source = "git+https://github.com/konstin/ruff?rev=7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3#7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3"
+source = "git+https://github.com/konstin/ruff?rev=671660a503a68bcf72287d757282a983217c4cc9#671660a503a68bcf72287d757282a983217c4cc9"
 dependencies = [
  "itertools",
  "ruff_source_file",
@@ -971,7 +971,7 @@ dependencies = [
 [[package]]
 name = "ruff_source_file"
 version = "0.0.0"
-source = "git+https://github.com/konstin/ruff?rev=7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3#7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3"
+source = "git+https://github.com/konstin/ruff?rev=671660a503a68bcf72287d757282a983217c4cc9#671660a503a68bcf72287d757282a983217c4cc9"
 dependencies = [
  "memchr",
  "once_cell",
@@ -982,7 +982,7 @@ dependencies = [
 [[package]]
 name = "ruff_text_size"
 version = "0.0.0"
-source = "git+https://github.com/konstin/ruff?rev=7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3#7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3"
+source = "git+https://github.com/konstin/ruff?rev=671660a503a68bcf72287d757282a983217c4cc9#671660a503a68bcf72287d757282a983217c4cc9"
 dependencies = [
  "serde",
 ]

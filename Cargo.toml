@@ -1,6 +1,6 @@
 [package]
 name = "python_plus_plus"
-version = "0.0.7"
+version = "0.0.8"
 edition = "2021"
 authors = ["konstin <konstin@mailbox.org>"]
 repository = "https://github.com/konstin/python_plus_plus"
@@ -22,7 +22,7 @@ libloading = "0.8.3"
 log = "0.4.21"
 monotrail-utils = { git = "https://github.com/konstin/poc-monotrail" }
 nix = { version = "0.28.0", features = ["process"] }
-ruff_python_formatter = { git = "https://github.com/konstin/ruff", rev = "7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3" }
+ruff_python_formatter = { git = "https://github.com/konstin/ruff", rev = "671660a503a68bcf72287d757282a983217c4cc9" }
 tempfile = "3.10.1"
 thiserror = "1.0.58"
 tracing = "0.1.40"

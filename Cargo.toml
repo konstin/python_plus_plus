@@ -16,12 +16,12 @@ path-guid = "EDE706B3-DB3B-48BC-B3EB-FEB3179360EF"
 anyhow = "1.0.81"
 dirs = "5.0.1"
 fs-err = "2.11.0"
-git2 = "0.18.2"
+git2 = "0.18.3"
 libc = "0.2.153"
 libloading = "0.8.3"
 log = "0.4.21"
 monotrail-utils = { git = "https://github.com/konstin/poc-monotrail" }
-nix = { version = "0.27.1", features = ["process"] }
+nix = { version = "0.28.0", features = ["process"] }
 ruff_python_formatter = { git = "https://github.com/konstin/ruff", rev = "7f97547b5f389a40ff68dfa57eaa1a1c0a3f04d3" }
 tempfile = "3.10.1"
 thiserror = "1.0.58"
@@ -41,7 +41,7 @@ lto = "thin"
 # Features to pass to cargo build
 features = ["vendored"]
 # The preferred cargo-dist version to use in CI (Cargo.toml SemVer syntax)
-cargo-dist-version = "0.12.0-prerelease.4"
+cargo-dist-version = "0.12.0"
 # The installers to generate for each app
 installers = ["shell", "powershell"]
 # Target platforms to build apps for (Rust target-triple syntax)

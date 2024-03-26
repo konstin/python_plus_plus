@@ -1,10 +1,11 @@
 [package]
 name = "python_plus_plus"
-version = "0.0.11"
+version = "0.0.12"
 edition = "2021"
 authors = ["konstin <konstin@mailbox.org>"]
 repository = "https://github.com/konstin/python_plus_plus"
 readme = "Readme.md"
+description = "Add postfix increment and decrement operators to python"
 
 [package.metadata.wix]
 upgrade-guid = "8D1866DC-8ECF-489A-A615-FA13CE08D620"
